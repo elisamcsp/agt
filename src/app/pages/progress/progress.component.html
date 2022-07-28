@@ -9,11 +9,11 @@
             class="progress-bar progress-bar-striped progress-bar-animated"
             role="progressbar"
             aria-label="Animated striped example"
-            [attr.aria-valuenow]="porcentaje"
+            [attr.aria-valuenow]="porcentajeBarra1"
             aria-valuenow="50"
             aria-valuemin="0"
             aria-valuemax="100"
-            [style]="{ width: porcentaje + '%' }"
+            [style]="{ width: porcentajeBarra1 + '%' }"
           ></div>
         </div>
 
@@ -24,11 +24,11 @@
             class="progress-bar progress-bar-striped progress-bar-animated bg-warning"
             role="progressbar"
             aria-label="Animated striped example"
-            [attr.aria-valuenow]="porcentaje"
+            [attr.aria-valuenow]="porcentajeBarra2"
             aria-valuenow="50"
             aria-valuemin="0"
             aria-valuemax="100"
-            [style]="{ width: porcentaje + '%' }"
+            [style]="{ width: porcentajeBarra2 + '%' }"
           ></div>
         </div>
       </div>
@@ -40,36 +40,23 @@
   <div class="col-6">
     <div class="card">
       <div class="card-body">
-        <div class="input-group mb-3">
-          <button
-            class="btn btn-primary"
-            type="button"
-            id="button-addon1"
-            (click)="cambiarValor(5)"
-          >
-            <i class="mdi mdi-plus"></i>
-          </button>
-          <input
-            type="text"
-            class="form-control"
-            name="porcentaje"
-            [(ngModel)]="porcentaje"
-          />
-          <button
-            class="btn btn-primary"
-            type="button"
-            id="button-addon2"
-            (click)="cambiarValor(-5)"
-          >
-            <i class="mdi mdi-minus"></i>
-          </button>
-        </div>
+        <app-incrementador
+          (cambioValor)="porcentajeBarra1 = $event"
+          leyenda="Progress Azul"
+          [porcentaje]="porcentajeBarra1"
+        ></app-incrementador>
       </div>
     </div>
   </div>
   <div class="col-6">
     <div class="card">
-      <div class="card-body">texto 2</div>
+      <div class="card-body">
+        <app-incrementador
+          (cambioValor)="porcentajeBarra2 = $event"
+          leyenda="Progress Amarillo"
+          [porcentaje]="porcentajeBarra2"
+        ></app-incrementador>
+      </div>
     </div>
   </div>
 </div>
