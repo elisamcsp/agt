@@ -1,9 +1,6 @@
-import { NgModule } from '@angular/core';
 import { PAGES_ROUTES } from './pages.route';
 
 import { SharedModule } from '../shared/shared.module';
-
-import { FormsModule } from '@angular/forms';
 
 import { PagesComponent } from './pages.component';
 
@@ -13,6 +10,10 @@ import { ProgressComponent } from './progress/progress.component';
 
 // Temporal
 import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { FormsModule } from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { PromesasComponent } from './promesas/promesas.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,8 @@ import { IncrementadorComponent } from '../components/incrementador/incrementado
     ProgressComponent,
     Graficas1Component,
     IncrementadorComponent,
+    AccountSettingsComponent,
+    PromesasComponent,
   ],
   exports: [
     PagesComponent,
